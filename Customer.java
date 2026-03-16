@@ -1,12 +1,14 @@
 public class Customer{
-    private int accountNumber;
+   
     private String name;
     private String mobileNumber;
+    private Account account;
     
     public Customer(int accountNumber , String name , String mobileNumber){
-     this.accountNumber = accountNumber ;
+    
      this.mobileNumber = mobileNumber;
      this.name = name;
+     this.account = new Account();
     }
 
     public String getName(){
@@ -16,8 +18,10 @@ public class Customer{
     public String getMobileNum(){
         return mobileNumber ;
     }
-
-    public int getAccountNumber(){
-        return accountNumber;
+   
+    public void getDetails(){
+    System.out.println("Name of the customer: " + getName());
+    System.out.println("Mobile number of the customer: " + getMobileNum());
     }
+    
 }
