@@ -12,14 +12,14 @@ public class Customer{
     }
 
     public String getName(){
-        return name ;
+        return  name ;
     }
-
+    
     public String getMobileNum(){
         return mobileNumber ;
     }
    
-    public void getDetails(){
+    public void getCustomerDetails(){
     System.out.println("Name of the customer: " + getName());
     System.out.println("Mobile number of the customer: " + getMobileNum());
     }
