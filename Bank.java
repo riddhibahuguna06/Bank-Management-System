@@ -12,7 +12,7 @@ public class Bank {
  public void addCustomer(String name, String mobileNumber, double balance, String accountType){
     int accountNumber = accounts.size() + 1001 ;  //generate account number from 1001
     Account account = new Account(accountNumber, balance, accountType) ;
-    Customer customer = new Customer( name, mobileNumber, account) ;
+  Customer customer = new Customer(name, mobileNumber, account, String.valueOf(accountNumber));
     accounts.put( String.valueOf(accountNumber), customer) ; // account Number is int but key is string
 }
 
@@ -36,6 +36,14 @@ public void withdraw(String accountNumber , double amount){
         return;
     }
     customer.getAccount().withdraw(amount);
+}
+public void viewTransactionHistory(String accountNumber){
+Customer customer = getCustomer(accountNumber);
+if(customer ==null){
+    System.out.println("Account not found");
+}
+customer.getAccount().getTransactionHistory();
+
 }
 
 public void viewAccounts(){
