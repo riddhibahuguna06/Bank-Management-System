@@ -85,12 +85,18 @@ while(true){
             bank.viewAccounts();
             break;
 
+        case 6 : //check balance
+        bank.checkBalance(accountNumber) ;
+        break;
 
-        case 6 :
+        case 7: //transfer money
+        
+
+        case 8 :
          System.out.println("Goodbye!");   //exit 
                 sc.close();   
-
-            break;
+            return;
+        
         default:
             break;
     }
