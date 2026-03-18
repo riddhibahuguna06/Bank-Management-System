@@ -41,9 +41,39 @@ public void viewTransactionHistory(String accountNumber){
 Customer customer = getCustomer(accountNumber);
 if(customer ==null){
     System.out.println("Account not found");
+    return;
 }
 customer.getAccount().getTransactionHistory();
 
+}
+
+public void checkBalance(String accountNumber ){
+    Customer c =  getCustomer(accountNumber);
+ if(c == null){
+    System.out.println("Account not found");
+    return;
+ }
+System.out.println("Your balance is : " + c.getAccount().getBalance());
+
+}
+
+public void transferMoney(String senderAccount , String reciverAccount , double amount){
+ Customer sender = getCustomer(senderAccount) ;
+ Customer reciver = getCustomer(reciverAccount);
+
+ if( sender == null || reciver == null ){
+    System.out.println("Account dont exist");
+    return;
+ }
+   System.out.println("The amount you want to transfer: " + amount);
+  if(sender.getAccount().getBalance() < amount){
+    System.out.println("Insufficent Balance");
+    return;
+  }
+  withdraw(senderAccount, amount);
+  deposit(reciverAccount, amount);
+  System.out.println("The amount is deposited to the recivers account ");
+ 
 }
 
 public void viewAccounts(){

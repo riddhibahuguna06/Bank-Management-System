@@ -8,7 +8,6 @@ Bank bank = new Bank() ;
 while(true){
 
      String accountNumber = "";
-     Customer c = null ;
      double amount = 0 ;
 
 
@@ -86,11 +85,31 @@ while(true){
             break;
 
         case 6 : //check balance
+        System.out.println("Your Account Number: ");
+        accountNumber = sc.next();
+        sc.nextLine();
+
         bank.checkBalance(accountNumber) ;
+
         break;
 
         case 7: //transfer money
-        
+         
+        System.out.println("Your Account Number (Sender): ");
+        String senderAccount = sc.next();
+        sc.nextLine() ;
+
+        System.out.println("Your Account Number (Reciver): ");
+        String reciverAccount = sc.next();
+        sc.nextLine();
+
+        System.out.println("Amount you want to transfer: ");
+        amount = sc.nextDouble();
+        sc.nextLine();
+
+        bank.transferMoney(senderAccount, reciverAccount, amount);
+
+       break;
 
         case 8 :
          System.out.println("Goodbye!");   //exit 
