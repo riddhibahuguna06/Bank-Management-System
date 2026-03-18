@@ -17,7 +17,9 @@ while(true){
                       "3. View Transaction History\n" +
                       "4. New Account\n" +
                       "5. View all accounts\n" +
-                      "6. Exit" );
+                      "6. Check Balance\n" +
+                      "7. Transfer Money\n" +
+                      "8. Exit" );
     
     System.out.println("Chosse an option from the menu: ");
     int choice = sc.nextInt() ;
